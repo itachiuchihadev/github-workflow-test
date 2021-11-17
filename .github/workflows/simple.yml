@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple Echo Command
-        run: echo "First Workflow Working"
+        run: eccho "First Workflow Working"
       - name: Multiline Command
         run: |
           node -v
