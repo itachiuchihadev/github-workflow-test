@@ -7,9 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple Echo Command
-        run: eccho "First Workflow Working"
+        run: echo "First Workflow Working"
       - name: Multiline Command
         run: |
           node -v
           npm -v
           echo "Multiline command finishes"
+      - name: Python Command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
