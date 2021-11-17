@@ -19,6 +19,7 @@ jobs:
           print(platform.processor())
         shell: python
   run-window-command:
+    needs: ["run-shell-command"]
     runs-on: windows-latest
     steps:
       - name: window powershell command
