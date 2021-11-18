@@ -1,0 +1,16 @@
+name: Action Command
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: JavaScript Action
+        id: greet
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: Itachi
+      - name: Log Greeting Time
+        run: echo "{{ steps.greet.output.time }}"
+
