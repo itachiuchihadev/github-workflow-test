@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repository Dispatch Files
-        run: echo "${{ github.event.client_message.env }}"
+        run: echo "${{ github.event.client_payload.env }}"
       - name: Files List
         run: |
           pwd
