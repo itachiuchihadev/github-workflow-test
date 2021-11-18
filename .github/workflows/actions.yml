@@ -3,6 +3,7 @@ name: Action Command
 on: 
   schedule:
     - cron: "0/5 * * * *"
+    - cron: 0/6 * * * *
   # push:
   pull_request:
     types: [closed, assigned, reopened, opened]
