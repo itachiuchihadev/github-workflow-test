@@ -1,6 +1,9 @@
 name: Action Command
 
-on: [push]
+on: 
+  push:
+  pull_request:
+    types: [closed, assigned, reopened, opened]
 
 jobs:
   run-github-actions:
