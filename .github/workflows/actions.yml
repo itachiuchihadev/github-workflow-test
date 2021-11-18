@@ -1,6 +1,11 @@
 name: Action Command
 
-on: [push]
+on: 
+  schedule:
+    - cron: "0/5 * * * *"
+  # push:
+  pull_request:
+    types: [closed, assigned, reopened, opened]
 
 jobs:
   run-github-actions:
