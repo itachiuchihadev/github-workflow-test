@@ -8,8 +8,7 @@ jobs:
     steps:
       - name: functions dump
         run: |
-          echo ${{ contains('hello', '89') }} 
-          # echo ${{ startWith('creation', 'cre') }}
+          echo ${{ contains('hello', '89') }}
           echo ${{ format('Hello {0} {1} {2}', 'first', 'second', 'third')}}
   one:
     runs-on: ubuntu-latest
