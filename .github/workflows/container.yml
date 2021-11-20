@@ -24,7 +24,7 @@ jobs:
       - name: Docker With Custom Script
         uses: docker://node:13.5.0-alpine3.10
         with:
-          entrypoint: ./script.sh
+          entrypoint: "./script.sh"
           args: "HelloWorld"
   docker_with_node:
     runs-on: ubuntu-latest
