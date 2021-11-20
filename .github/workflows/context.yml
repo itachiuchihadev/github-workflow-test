@@ -17,7 +17,8 @@ jobs:
         if: github.event_name == 'push'
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: eccho "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
+        continue-on-error: true
       - name: Dump job context
         if: failure()
         env:
