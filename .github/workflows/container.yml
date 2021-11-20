@@ -8,19 +8,23 @@ jobs:
     container:
       image: node:14.18-bullseye
     steps:
-      - name: log node version
-        run: node -v
-      - name: step with docker
-        uses: docker://node:13.5.0-alpine3.10
-        with:
-          entrypoint: "/bin/echo"
-          args: "Hello World"
-      - name: Log node version
-        uses: docker://node:13.5.0-alpine3.10
-        with:
-          entrypoint: /usr/local/bin/node
-          args: -v
+      # - name: log node version
+      #   run: node -v
+      # - name: step with docker
+      #   uses: docker://node:13.5.0-alpine3.10
+      #   with:
+      #     entrypoint: "/bin/echo"
+      #     args: "Hello World"
+      # - name: Log node version
+      #   uses: docker://node:13.5.0-alpine3.10
+      #   with:
+      #     entrypoint: /usr/local/bin/node
+      #     args: -v
       - uses: actions/checkout@v1
+      - name: Set Permissions
+        run: |
+          ls -a
+          chmod -x script.sh
       - name: Docker With Custom Script
         uses: docker://node:13.5.0-alpine3.10
         run: chmod +x script.sh
