@@ -20,6 +20,7 @@ jobs:
         with:
           entrypoint: /usr/local/bin/node
           args: -v
+      - uses: actions/checkout@v1
       - name: Docker With Custom Script
         uses: docker://node:13.5.0-alpine3.10
         with:
