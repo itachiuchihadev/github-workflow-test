@@ -4,14 +4,18 @@ on: push
 
 jobs:
   change_node_version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        node_version: [10, 11, 12]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Show Default Node Version
         run: node -v
       - name: Setup Node Version
         uses: actions/setup-node@v1
         with:
-          node_version: 6
+          node_version: ${{ matrix.node_version }}
       - name: Show Node Version After Setup
         run: node -v
 
