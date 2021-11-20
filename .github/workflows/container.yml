@@ -3,6 +3,23 @@ name: Container WorkFlow
 on: push
 
 jobs:
+  docker_on_step:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.18-bullseye
+    steps:
+      - name: log node version
+        run: node -v
+      - name: step with docker
+        uses: docker://node:13.5.0-alpine3.10
+        with:
+          entrypoint: "/bin/echo"
+          args: "Hello World"
+      - name: Log node version
+        uses: docker://node:13.5.0-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
   docker_with_node:
     runs-on: ubuntu-latest
     services:
