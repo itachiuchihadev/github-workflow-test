@@ -1,22 +1,38 @@
-name: Container
+name: Container WorkFlow
 
 on: push
 
 jobs:
   docker_with_node:
     runs-on: ubuntu-latest
-    container:
-      image: node:13.5.0-alpine3.10
+    services:
+      app:
+        image: alialaa17/node-api
+        ports: 
+          - 3004:3000
+      mongo:
+        image: mongo
+        ports:
+          - "27017:27017"
     steps:
-      - name: Log node Version
+      - name: Post user
         run: |
-          node --version
-          cat /etc/os-release
-  check_docker_version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check Docker Version
-        run: |
-          docker --version
-          docker-compose --version
+          "curl -X POST http://localhost:3004/api/user -H 'Content-Type: application/json' -d '{\"username\" : \"newuser\", \"address\" : \"bejing\"}'"
+      - name: Get user
+        run: curl http://localhost:3004/api/users
+
+  #   container:
+  #     image: node:13.5.0-alpine3.10
+  #   steps:
+  #     - name: Log node Version
+  #       run: |
+  #         node --version
+  #         cat /etc/os-release
+  # check_docker_version:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Check Docker Version
+  #       run: |
+  #         docker --version
+  #         docker-compose --version
 
