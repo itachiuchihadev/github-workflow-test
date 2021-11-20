@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Docker With Custom Script
         uses: docker://node:13.5.0-alpine3.10
+        run: chmod +x script.sh
         with:
           entrypoint: "./script.sh"
           args: "HelloWorld"
