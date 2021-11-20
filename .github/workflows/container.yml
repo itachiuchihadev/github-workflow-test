@@ -3,6 +3,15 @@ name: Container
 on: push
 
 jobs:
+  docker_with_node:
+    runs-on: ubuntu-latest
+    container:
+      image: node.13.5.0-alpine3.10
+    steps:
+      - name: Log node Version
+        run: |
+          node --version
+          cat /etc/os-release
   check_docker_version:
     runs-on: ubuntu-latest
     steps:
