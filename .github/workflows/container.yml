@@ -6,7 +6,7 @@ jobs:
   docker_with_node:
     runs-on: ubuntu-latest
     container:
-      image: node.13.5.0-alpine3.10
+      image: node:13.5.0-alpine3.10
     steps:
       - name: Log node Version
         run: |
