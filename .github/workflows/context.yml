@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   functions:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - name: functions dump
         run: |

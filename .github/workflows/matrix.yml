@@ -1,0 +1,17 @@
+name: Matrix WorkFlow
+
+on: push
+
+jobs:
+  change_node_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Default Node Version
+        run: node -v
+      - name: Setup Node Version
+        uses: actions/setup-node@v1
+        with:
+          node_version: 6
+      - name: Show Node Version After Setup
+        run: node -v
+
