@@ -9,6 +9,7 @@ try{
     const time = new Date();
 
     console.log(`Current Time : ${ time.toTimeString() }`);
+    core.setOutput("time", time.toTimeString());
 
     console.log(`Github Object : ${JSON.stringify(github, null, '\t')}`);
 }
