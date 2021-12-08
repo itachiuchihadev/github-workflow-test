@@ -12,5 +12,5 @@ jobs:
       with:
         who-to-greet: Naruto
     - run: |
-        echo "Time: ${{ steps.greet.outputs.time }}"
+        echo "Time: ${{ steps.greeting.outputs.time }}"
       
