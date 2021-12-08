@@ -1278,7 +1278,7 @@ try{
 
     console.log(`Current Time : ${ time.toTimeString() }`);
 
-    console.log(`Github Object : ${JOSN.stringify(github, null, '\t')}`);
+    console.log(`Github Object : ${JSON.stringify(github, null, '\t')}`);
 }
 catch(error){
     core.setFailed(error.message);
