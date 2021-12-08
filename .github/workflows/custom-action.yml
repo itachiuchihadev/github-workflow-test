@@ -1,0 +1,16 @@
+name: Custom Action
+
+on: push
+
+jobs:
+  custom-action:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/hello
+      id: greeting
+      with:
+        who-to-greet: Naruto
+    - run: |
+        echo "Time: ${{ steps.greet.outputs.time }}"
+      

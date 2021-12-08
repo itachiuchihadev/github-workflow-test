@@ -1,0 +1,15 @@
+name: Greet Hello
+author: Itachi
+description: NO 
+inputs:
+  who-to-greet: 
+    description: no description
+    required: true
+    default: Sasuke
+outputs:
+  time:
+    description: greeting time
+runs:
+  using: "node16"
+  main: "dist/index.js"
+  

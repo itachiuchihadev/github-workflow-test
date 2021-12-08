@@ -1,6 +1,6 @@
 name: Container WorkFlow
 
-on: push
+on: [pull_request]
 
 jobs:
   docker_on_step:
@@ -25,11 +25,11 @@ jobs:
         run: |
           ls -a
           chmod -x script.sh
-      - name: Docker With Custom Script
-        uses: docker://node:13.5.0-alpine3.10
-        with:
-          entrypoint: ./shell-script.sh
-          args: "HelloWorld"
+      # - name: Docker With Custom Script
+      #   uses: docker://node:13.5.0-alpine3.10
+      #   with:
+      #     entrypoint: ./shell-script.sh
+      #     args: "HelloWorld"
   docker_with_node:
     runs-on: ubuntu-latest
     services:
