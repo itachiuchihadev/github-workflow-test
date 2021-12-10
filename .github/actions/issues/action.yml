@@ -1,0 +1,25 @@
+name: Create Issue
+author: Itachi Uchiha
+description: Creating the issue with workflow
+inputs:
+  token:
+    description: Github token
+    required: true
+  title:
+    description: Issue Title
+    required: true
+  body:
+    description: Issue Body
+    required: false
+  assignees:
+    description: Issues Assignees
+    required: false
+
+outputs:
+  issue:
+    description: 'the issue object as json string'
+
+runs:
+  using: node16
+  main: dist/index.js
+

@@ -1,6 +1,6 @@
 name: Greet Hello
 author: Itachi
-description: NO 
+description: Greeting With JavaScript
 inputs:
   who-to-greet: 
     description: no description
