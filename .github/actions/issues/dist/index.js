@@ -5719,10 +5719,10 @@ async function run() {
     const tittle = core.getInput("title");
     const body = core.getInput("body");
     const assignees = core.getInput("assignees");
-
+    
     const ocktokit = new github.getOctokit(token);
-
-    const response = await ocktokit.issues.create({
+    // console.log(ocktokit.rest);
+    const response = await ocktokit.rest.issues.create({
       ...github.context.repo,
       tittle,
       body,
