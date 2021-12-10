@@ -5716,7 +5716,7 @@ const github = __webpack_require__(42);
 async function run() {
   try {
     const token = core.getInput("token");
-    const tittle = core.getInput("title");
+    const title = core.getInput("title");
     const body = core.getInput("body");
     const assignees = core.getInput("assignees");
     
@@ -5724,7 +5724,7 @@ async function run() {
     // console.log(ocktokit.rest);
     const response = await ocktokit.rest.issues.create({
       ...github.context.repo,
-      tittle,
+      title,
       body,
       assignees: assignees ? assignees.split(",") : undefined,
     });
