@@ -13,7 +13,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: title to create issue
         body: auto issue created by custom github actions/checkout
-        assignees: 'itachiuchihadev,dev-abhishek-kumar'
+        assignees: 'itachiuchihadev'
     - run: |
         echo ${{ steps.create_issues.outputs.issue }}
     - uses: ./.github/actions/hello
