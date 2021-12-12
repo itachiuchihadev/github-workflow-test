@@ -18,5 +18,5 @@ echo "some degub message"
 echo "some degub message"
 echo "::endgroup::"
 
-echo "::set-env name=Hello::hello"
+# echo "::set-env name=Hello::hello"
 
