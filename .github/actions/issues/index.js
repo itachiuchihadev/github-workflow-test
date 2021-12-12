@@ -9,7 +9,6 @@ async function run() {
     const assignees = core.getInput("assignees");
     
     const ocktokit = new github.getOctokit(token);
-    // console.log(ocktokit.rest);
     const response = await ocktokit.rest.issues.create({
       ...github.context.repo,
       title,

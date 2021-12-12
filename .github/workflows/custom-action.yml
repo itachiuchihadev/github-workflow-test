@@ -16,7 +16,7 @@ jobs:
         assignees: 'itachiuchihadev'
     - run: |
         echo ${{ steps.create_issues.outputs.issue }}
-    - uses: ./.github/actions/hello
+    - uses: ./.github/actions/docker-action
       id: greeting
       with:
         who-to-greet: Naruto

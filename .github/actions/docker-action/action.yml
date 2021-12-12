@@ -1,0 +1,17 @@
+name: Greet Hello
+author: Itachi
+description: Greeting With JavaScript
+inputs:
+  who-to-greet: 
+    description: no description
+    required: true
+    default: Sasuke
+outputs:
+  time:
+    description: greeting time
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet }}
+  
